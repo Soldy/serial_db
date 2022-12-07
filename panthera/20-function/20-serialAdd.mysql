@@ -1,0 +1,24 @@
+CREATE OR REPLACE FUNCTION `serialAdd`(
+  INAME VARCHAR(128) CHARSET utf8
+) RETURNS INT MODIFIES SQL DATA
+BEGIN
+    DECLARE serial_count BIGINT UNSIGNED; 
+    DECLARE aliass_id INT UNSIGNED; 
+    SELECT `serial`
+      INTO 
+        serial_count
+      FROM 
+        `serials`
+       WHERE 
+           `serials`.`name` = INAME
+       LIMIT 1;
+    IF serial_count IS NULL THEN 
+        INSERT INTO `serials`(
+            `serials`.`name`
+        ) VALUES (
+            INAME
+        );
+        RETURN 0;
+    END IF;
+    RETURN serial_count;
+END;
