@@ -1,6 +1,6 @@
 CREATE TABLE `serials` (
     `id` SERIAL,
     `name` VARCHAR(32),
-    `serial` BIGINT UNSIGNED NOT NULL,
+    `serial` BIGINT UNSIGNED NOT NULL DEFAULT 0,
      KEY `index` (`id`)
 )  ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;;
