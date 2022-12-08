@@ -1,10 +1,10 @@
 CREATE OR REPLACE FUNCTION `serialGet`(
-  INAME VARCHAR(128) CHARSET utf8
+  INAME VARCHAR(32) CHARSET utf8
 ) RETURNS INT MODIFIES SQL DATA
 BEGIN
     DECLARE serial_count BIGINT UNSIGNED; 
-    DECLARE aliass_id INT UNSIGNED; 
     SELECT `serial`
+      M
       INTO 
         serial_count
       FROM 
@@ -14,9 +14,11 @@ BEGIN
        LIMIT 1;
     IF serial_count IS NULL THEN 
         INSERT INTO `serials`(
-            `serials`.`name`
+            `serials`.`name`,
+            `serials`.`serial`
         ) VALUES (
-            INAME
+            INAME,
+            1
         );
         RETURN 0;
     END IF;
