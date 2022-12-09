@@ -3,7 +3,6 @@ CREATE OR REPLACE FUNCTION `serialAdd`(
 ) RETURNS INT MODIFIES SQL DATA
 BEGIN
     DECLARE serial_count BIGINT UNSIGNED; 
-    DECLARE aliass_id INT UNSIGNED; 
     SELECT `serial`
       INTO 
         serial_count

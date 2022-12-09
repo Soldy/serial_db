@@ -1,4 +1,4 @@
-CREATE OR REPLACE FUNCTION `serialGet`(
+CREATE OR REPLACE FUNCTION `serialShow`(
   INAME VARCHAR(32) CHARSET utf8
 ) RETURNS INT MODIFIES SQL DATA
 BEGIN
@@ -12,20 +12,7 @@ BEGIN
            `serials`.`name` = INAME
        LIMIT 1;
     IF serial_count IS NULL THEN 
-        INSERT INTO `serials`(
-            `serials`.`name`,
-            `serials`.`serial`
-        ) VALUES (
-            INAME,
-            1
-        );
         RETURN 0;
     END IF;
-    UPDATE
-        `serials`
-      SET
-        `serials`.`serial` = serial_count+1
-      WHERE
-        `serials`.`name` = INAME;
     RETURN serial_count;
 END;
