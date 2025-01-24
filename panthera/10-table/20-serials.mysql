@@ -1,3 +1,11 @@
+
+/**
+ * @ptable serials
+ * @pcol {serial} id
+ * @pcol {uint64_t} name
+**/
+
+
 CREATE TABLE `serials` (
     `id` SERIAL,
     `name` VARCHAR(32),
