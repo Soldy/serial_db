@@ -1,3 +1,13 @@
+
+/**
+ * @ptable serials
+ * @pfunction serialShow
+ * @ptype get
+ * @pinput {string} INAME -> name
+ * @preturn {uint64_t} -> serial
+**/
+
+
 CREATE OR REPLACE FUNCTION `serialShow`(
   INAME VARCHAR(32) CHARSET utf8
 ) RETURNS INT MODIFIES SQL DATA

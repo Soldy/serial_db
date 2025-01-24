@@ -1,3 +1,13 @@
+
+/**
+ * @ptable serials
+ * @pfunction serialShortGet
+ * @ptype get
+ * @pinput {string} INAME -> name
+ * @preturn {string}
+**/
+
+
 CREATE OR REPLACE FUNCTION `serialShortGet`(
   INAME VARCHAR(32) CHARSET utf8
 ) RETURNS VARCHAR(32) MODIFIES SQL DATA
