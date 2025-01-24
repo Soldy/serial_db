@@ -1,2 +1,10 @@
-DROP TABLES IF EXISTS `serials`;
 
+/**
+ * @ptable serials
+ * @pfunction serialAdd
+ * @pfunction serialGet
+ * @pfunction serialShortGet
+ * @pfunction serialShow
+**/
+
+DROP TABLES IF EXISTS `serials`;
